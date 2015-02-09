@@ -27,9 +27,9 @@ public class recursion {
 	if (s.equals("")) {
 	    return 0;
 	} else if (s.charAt(0) == c) {
-	    return 1 + count(s.substring(1));
+	    return 1 + count(s.substring(1), c);
 	} else {
-	    return count(s.substring(1));
+	    return count(s.substring(1), c);
 	}
     }
 
