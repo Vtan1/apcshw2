@@ -3,8 +3,8 @@ import java.util.*;
 
 public class mergesort {
 
-    public ArrayList<int> merge (ArrayList<int> A, ArrayList<int> B) {
-	ArrayList<int> returnlist;
+    public ArrayList<Integer> merge (ArrayList<Integer> A, ArrayList<Integer> B) {
+	ArrayList<Integer> returnList = new ArrayList<Integer>();
 	while (A.size() > 0 && B.size() > 0) {
 	    int i = 0;
 	    if (A.get(0) >= B.get(0)) {
@@ -16,7 +16,6 @@ public class mergesort {
 		i++;
 	    }
 	}
-	return 
+	return returnList;
     }
-    
 }
