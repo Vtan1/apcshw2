@@ -6,3 +6,37 @@ and the larger ones are to the right
 4. either we're done if pivot is kth smallest or call select on upper or lower
 parts as appropriate
 */
+
+import java.util.*;
+
+public class select {
+   
+    public int[] partition(int[] L, int SI, int EI) {
+	int[] D = new int[L.length];
+
+	for (int x = 0;x < SI; x++) {
+	    D[x] = L[x];
+	}
+	for (int y = EI + 1;y < L.length; y++) {
+	    D[y] = L[y];
+	}
+
+	int pivot = L[SI];
+	SI++;
+	
+	for (int z = SI;z < EI + 1;z++) {
+	    if (L[z] < pivot) {
+		D[SI] = L[z];
+		SI++;
+	    } else {
+		D[EI] = L[z];
+		EI--;
+	    }
+	    
+	    if (SI == EI) {
+		D[SI] = pivot;
+	    }
+	}
+	return D;
+    }
+}
