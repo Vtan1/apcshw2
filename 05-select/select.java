@@ -39,4 +39,8 @@ public class select {
 	}
 	return D;
     }
+    
+    public int Select(int[] A,int k,int l, int h) {
+	int pivot = A[k];
+	
 }
