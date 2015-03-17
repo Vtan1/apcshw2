@@ -3,7 +3,7 @@ public class LList {
     private int len;
     
     public LList() {
-	l = new Node();
+	l = new Node("node");
 	len = 0;
     }
 
@@ -19,8 +19,10 @@ public class LList {
     
     public void add(String s){
 	Node tmp = new Node(s);
-	tmp.setNext(l);
-	l = tmp;
+	l.setNext(tmp);
+	tmp.setNext(
+	//tmp.setNext(l);
+	//l = tmp;
     }
 
     public Node find(int n) {
