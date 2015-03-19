@@ -3,7 +3,7 @@ public class LList {
     private int len;
     
     public LList() {
-	l = new Node();
+	l = new Node("");
 	len = 0;
     }
 
@@ -19,28 +19,39 @@ public class LList {
     
     public void add(String s){
 	Node tmp = new Node(s);
-	tmp.setNext(l);
-	l = tmp;
+	tmp.setNext(l.getNext());
+	l.setNext(tmp);
+	len++;
     }
 
-    public Node find(int n) {
+    public String get(int n) {
 	Node ans = l;
 	for (int i = 0; i < n; i++) {
 	    ans = ans.getNext();
 	}
-	return ans;
+	return ans.getNext().getData();
     }
-
+    
     public void add(int n, String s) {
 	Node insertion  = new Node(s);
-	Node ahead = find(n);
-	if (n == 0) {
-	    l = insertion;
+	Node before = l;
+	for (int i = 0;i < n;i++) {
+	    before = before.getNext();
 	}
-	else if (n > 0) {
-	    Node before = find(n-1);
-	    before.setNext(insertion);
+	Node after = before.getNext();
+	before.setNext(insertion);
+	insertion.setNext(after);
+	len++;
+    }
+
+    public String remove(int n) {
+	Node x = l;
+	for (int i = 0;i < n;i++) {
+	    x = x.getNext();
 	}
-	insertion.setNext(ahead);
+	String tmp = x.getNext().getData();
+	x.setNext(x.getNext().getNext());
+	len--;
+	return tmp;
     }
 }

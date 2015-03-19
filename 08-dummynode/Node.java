@@ -18,5 +18,6 @@ public class Node {
 	return next;
     }
     public String toString() {
-	return data;}
+	return data;
+    }
 }
