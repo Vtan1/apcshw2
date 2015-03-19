@@ -3,10 +3,15 @@ public class LList {
     private int len;
     
     public LList() {
-	l = new Node("");
+	l = new Node(-1);
 	len = 0;
     }
-
+    /*
+    public LLit getLLit() {
+	LLit llit = new LLit(l);
+	return llit;
+    }
+    */
     public String toString(){
 	String s = "";
 	Node tmp;
@@ -17,14 +22,14 @@ public class LList {
 	return s;
     }
     
-    public void add(String s){
+    public void add(int s){
 	Node tmp = new Node(s);
 	tmp.setNext(l.getNext());
 	l.setNext(tmp);
 	len++;
     }
 
-    public String get(int n) {
+    public int get(int n) {
 	Node ans = l;
 	for (int i = 0; i < n; i++) {
 	    ans = ans.getNext();
@@ -32,7 +37,7 @@ public class LList {
 	return ans.getNext().getData();
     }
     
-    public void add(int n, String s) {
+    public void add(int n, int s) {
 	Node insertion  = new Node(s);
 	Node before = l;
 	for (int i = 0;i < n;i++) {
@@ -44,14 +49,42 @@ public class LList {
 	len++;
     }
 
-    public String remove(int n) {
+    public int remove(int n) {
 	Node x = l;
 	for (int i = 0;i < n;i++) {
 	    x = x.getNext();
 	}
-	String tmp = x.getNext().getData();
+	int tmp = x.getNext().getData();
 	x.setNext(x.getNext().getNext());
 	len--;
 	return tmp;
+    }
+
+    public boolean removeinstance(int n) {
+	Node T = l;
+	while (T.getNext() != null) {
+	    if (T.getNext().getData() == n) {
+		T.setNext(T.getNext().getNext());
+		return true;
+	    }
+	}
+	return false;
+    }
+
+
+    //piggy backing, can be useful with more pointers.
+    //kinda like T2 is catching up to T each time.
+    public boolean remove2(int n) {
+	Node T=l.getNext();
+	Node T2 = l;
+	while (T != null) {
+	    if (T.getData() == n) {
+		T2.setNext(T.getNext());
+		return true;
+	    }
+	    T2 = T;
+	    T=T.getNext();
+	}
+	return false;
     }
 }
