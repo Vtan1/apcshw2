@@ -3,15 +3,10 @@ public class LList {
     private int len;
     
     public LList() {
-	l = new Node(-1);
+	l = new Node();
 	len = 0;
     }
-    /*
-    public LLit getLLit() {
-	LLit llit = new LLit(l);
-	return llit;
-    }
-    */
+
     public String toString(){
 	String s = "";
 	Node tmp;

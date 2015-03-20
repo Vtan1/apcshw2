@@ -1,16 +1,11 @@
-import java.util.*;
-public class  Driver{
+public class Driver{
     public static void main(String[] args) {
-	Random r = new Random();
 	LList l = new LList();
-	for (int i=0; i < 10; i++){
+	for (int i=0;i < 5; i++){
 	    l.add(i);
 	}
+
+	l.add(100);
 	System.out.println(l);
-	//System.out.println(l.get(9));
-	//l.add(3,500);
-	//System.out.println(l);
-	//l.remove(3);
-	//System.out.println(l);
     }
 }

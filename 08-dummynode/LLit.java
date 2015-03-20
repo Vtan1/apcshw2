@@ -1,22 +1,16 @@
-public class LLit {
-    private Node l;
-
-    public LLit(Node n) {
-	l = n.getNext();
+public class LLit<E>{
+    private Node<E> t;
+    public LLit(Node<E> n){
+	t=n;
     }
 
-    public boolean hasNext() {
-	return l != null;
+    public boolean hasNext(){
+	return t!=null;
     }
 
-    /*
-      move to the next node and
-      return the value in
-      the node (before the move)
-    */
-    public String next() {
-	String s = l.getData();
-	l = l.getNext();
-	return s;
+    public E next(){
+	E retval = t.getData();
+	t=t.getNext();
+	return retval;
     }
 }
