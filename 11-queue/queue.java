@@ -10,18 +10,33 @@ public class queue<E> {
 	len = 0;
     }
 
+    /*
     public void enqueue(E data) {
 	Node<E> tmp = new Node<E>(data);
 	back.setNext(tmp);
 	back = tmp;
 	len++;
     }
+    */
+    
+    public void enqueue(E data) {
+	Node<E> tmp = new Node<E>(data);
+	if (front == back) {
+	    front = tmp;
+	    back = tmp;
+	} else {
+	    back.setNext(tmp);
+	    back=tmp;
+	}
+    }
 
     public E dequeue() {
-	E data = front.getData();
+	E retval = front.getData();
 	front = front.getNext();
 	len--;
-	return data;
+	if (start == null)
+	    end = null;
+	return retval;
     }
 
     public boolean empty() {
