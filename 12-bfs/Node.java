@@ -1,11 +1,18 @@
 public class Node{
     private int x, y;
-    //private E data;
-    private Node next;
+    private Node prev;
+    //private Node next;
 
-    public Node(int a, int b){
-	x = a;
-	y = b;
+    public Node(int x, int y){
+	this.x = x;
+	this.y = y;
+    }
+    
+    public Node getPrev() {
+	return prev;
+    }
+    public void setPrev(Node n) {
+	prev = n;
     }
     public int getX() {
 	return x;
@@ -13,6 +20,7 @@ public class Node{
     public int getY() {
 	return y;
     }
+    /*
     public void setNext(Node n){
 	next = n;
     }
@@ -22,4 +30,5 @@ public class Node{
     public String toString(){
 	return ""+x+","+y;
     }
+    */
 }
