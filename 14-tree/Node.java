@@ -3,7 +3,7 @@ public class Node {
     private Node left,right;
 
     public Node () {
-	data = null;
+	data = 0;
 	left = null;
 	right = null;
     }
@@ -34,3 +34,4 @@ public class Node {
 	tmp.setData(x);
 	right = tmp;
     }
+}
