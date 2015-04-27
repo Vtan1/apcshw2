@@ -89,12 +89,12 @@ public class Tree {
 	    
     public Node rsearch(Node t, int i) {
 	Node T = t;
-	if (i == T.getData()) {
+	if (i == T.getData() || T == null) {
 	    return T;
 	} else if (i < T.getData()) {
-	    rsearch(T.getLeft(), i);
+	    return rsearch(T.getLeft(), i);
 	} else {
-	    rsearch(T.getRight(), i);
+	    return rsearch(T.getRight(), i);
 	}
 	return null;
     }
