@@ -1,1 +1,0 @@
--in addition to adding each coordinate to the frontier, also has a priority that allows the Nodes to be inserted into the list based on how close they are to the exit. Closest one in front of the queue so that you search down there first.

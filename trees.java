@@ -60,4 +60,8 @@
      >when lead pointer (T) gets to null, piggyback (T2) will be at the node
       before insertion point.
      >insert new node to left or right of T2 as appropriate.
+
+4/27/15
+  -process node ----> adding to a string
+  -starting node + traverse(left) + traverse(right)
  */

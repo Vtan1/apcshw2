@@ -84,9 +84,7 @@ public class Tree {
 	    }
 	}
     }
-	
-	
-	    
+
     public Node rsearch(Node t, int i) {
 	Node T = t;
 	if (i == T.getData() || T == null) {
@@ -96,6 +94,25 @@ public class Tree {
 	} else {
 	    return rsearch(T.getRight(), i);
 	}
-	return null;
+
     }
+
+    public String traverse(Node T) {
+	String s = "";
+	s = s + T.getData() + traverse(T.getLeft()) + traverse(T.getRight());
+	return s;
+    }
+
+    public String toString() {
+	Node tmp = T;
+	String s = "";
+	if (tmp == null) {
+	    return s;
+	} else {
+	    s = s + traverse(tmp);
+		//+ traverse(tmp.getLeft()) + traverse(tmp.getRight());
+	} return s;
+    }
+
 }
+
