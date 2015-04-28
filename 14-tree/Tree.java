@@ -99,7 +99,9 @@ public class Tree {
 
     public String traverse(Node T) {
 	String s = "";
-	s = s + T.getData() + traverse(T.getLeft()) + traverse(T.getRight());
+	if (T==null)
+	    return s;
+	s = s  + traverse(T.getLeft()) + T.getData() + traverse(T.getRight());
 	return s;
     }
 
@@ -111,8 +113,8 @@ public class Tree {
 	} else {
 	    s = s + traverse(tmp);
 		//+ traverse(tmp.getLeft()) + traverse(tmp.getRight());
-	} return s;
+	}
+	return s;
     }
-
 }
 
