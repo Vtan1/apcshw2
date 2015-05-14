@@ -34,4 +34,8 @@ public class Node {
 	tmp.setData(x);
 	right = tmp;
     }
+    public String toString() {
+	return ""+data;
+    }
+    
 }

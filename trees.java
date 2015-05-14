@@ -64,4 +64,45 @@
 4/27/15
   -process node ----> adding to a string
   -starting node + traverse(left) + traverse(right)
+
+4/29/15
+  -get a pointer to the node to delete and its parent (same thing as the search
+   part of insert but you stop @ the node to delete).
+  a) T is a leaf. point T2's left or right to null.
+  b) T has one child. point T2's left or right to T's only child.
+  c) T has two children.
+    -find the largest in the left subtree or the smallest on the right. These
+     values will always work in the tree. The node will always be a case a or b
+     node.
+    -copy data from L into T.
+
+4/30/15
+  -insert has a run time of log(n) if it is full/blanced
+  -O(n) if the tree degenerates into a list.
+  
+  -remove is the same as search, runtime is also log(n).
+  
+  -traverse O(n) with respect to the number of nodes n.
+
+5/11/15
+  -counting nodes in a binary tree.
+  -base case: return 0 if null.
+  -recursive reduction: return 1 + nodes(left) + nodes(right)
+  
+  public int nodecount(Node t) {
+    if (t == null)
+      return 0;
+    else
+      return 1 + nodecount(t.getLeft()) + nodecount(t.getRight());
+  }
+
+  -replace 1 with t.getData() if you want to find the sum of all nodes in the
+   list.
+
+  1. max value from a tree
+  2. height
+  3. longest leaf to leaf path
+  4. split dupes
+    -when there's a parent and child have the same value, insert a new node 
+     between them one less than the parent
  */
