@@ -1,0 +1,14 @@
+public class heap {
+    public Node T;
+    public int[] heapArr;
+
+    public heap() {
+	heapArr = new int
+
+    public int findMin(Node t) {
+	return t.getData();
+    }
+
+    public void pushdown(Node t, Node x) {
+	Node T = t;
+	Node 
